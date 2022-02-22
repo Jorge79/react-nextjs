@@ -1,8 +1,12 @@
-import GlobalStyle from '../src/components/theme/GlobalStyle';
+import GlobalStyle from '../src/theme/GlobalStyle';
 
 function MyApp({ Component, pageProps }) {
-  <GlobalStyle />;
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;

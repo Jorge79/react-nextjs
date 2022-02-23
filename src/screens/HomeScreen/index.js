@@ -1,10 +1,11 @@
-import Footer from '../../components/patterns/Footer'
-import Link from '../../components/Link'
+import Head from 'next/head';
+import Footer from '../../components/patterns/Footer';
+import Link from '../../components/Link';
 import { theme } from '../../theme/theme';
 import { Image, Box, Text, Icon, Input, Button } from '../../theme/components';
 
-const LOGO_ALURA_URL = 'http://placehold.it/94x44';
-const SIDE_IMAGE_URL = 'http://placehold.it/2878x1640'
+const LOGO_ALURA_URL = '/images/alura-logo.svg';
+const SIDE_IMAGE_URL = '/images/alura-cases.png';
 
 function SideImage() {
   return (
@@ -14,11 +15,11 @@ function SideImage() {
           md: theme.space.x8,
         },
         marginHorizontal: {
-          sm: 'auto'
+          sm: 'auto',
         },
         maxWidth: {
           sm: theme.space.xcontainer_md,
-        }
+        },
       }}
     >
       <Box
@@ -26,10 +27,10 @@ function SideImage() {
           top: 0,
           bottom: 0,
           right: {
-            lg: theme.space.x0
+            lg: theme.space.x0,
           },
           width: {
-            lg: theme.space["x1/2"],
+            lg: theme.space['x1/2'],
           },
           paddingTop: {
             xs: theme.space.x12,
@@ -41,17 +42,17 @@ function SideImage() {
           position: {
             sm: 'relative',
             lg: 'absolute',
-          }
+          },
         }}
       >
-        <Box 
+        <Box
           styleSheet={{
             height: {
-              lg: theme.space["x1/1"],
+              lg: theme.space['x1/1'],
             },
             maxWidth: {
               sm: theme.space.xcontainer_md,
-              lg: 'none'
+              lg: 'none',
             },
             position: 'relative',
             paddingHorizontal: {
@@ -75,32 +76,35 @@ function SideImage() {
                 md: theme.space.x4,
               },
               maxWidth: {
-                lg: "none",
+                lg: 'none',
               },
               width: {
-                lg: "auto",
+                lg: 'auto',
               },
               height: {
-                lg: theme.space["x1/1"],
+                lg: theme.space['x1/1'],
               },
             }}
             src={SIDE_IMAGE_URL}
-            alt="Treinamento com a roberta arcoverde no alura cases, falando sobre o stackoverflow"
+            alt='Treinamento com a roberta arcoverde no alura cases, falando sobre o stackoverflow'
           />
         </Box>
       </Box>
     </Box>
-  )
+  );
 }
 
 export default function HomeScreen() {
   return (
     <Box>
+      <Head>
+        <title>Home - Alura Cases Campanha</title>
+      </Head>
       <Box
-        as="main"
+        as='main'
         styleSheet={{
           flex: 1,
-          backgroundColor: theme.colors.neutral["050"],
+          backgroundColor: theme.colors.neutral['050'],
         }}
       >
         <Box
@@ -132,25 +136,25 @@ export default function HomeScreen() {
                 lg: theme.space.xcontainer_lg,
               },
               display: {
-                lg: "grid",
+                lg: 'grid',
               },
               gap: {
                 lg: theme.space.x24,
               },
               gridTemplateColumns: {
-                lg: "repeat(2, minmax(0, 1fr))",
-              }
+                lg: 'repeat(2, minmax(0, 1fr))',
+              },
             }}
           >
             <Box>
               <Box>
                 <Image
                   styleSheet={{
-                    width: "auto",
+                    width: 'auto',
                     height: theme.space.x11,
                   }}
                   src={LOGO_ALURA_URL}
-                  alt="Logo Alura"
+                  alt='Logo Alura'
                 />
               </Box>
               <Box
@@ -163,32 +167,32 @@ export default function HomeScreen() {
               >
                 <Box>
                   <Link
-                    href="/faq"
+                    href='/faq'
                     styleSheet={{
-                      display: "inline-flex",
+                      display: 'inline-flex',
                       alignItems: {
-                        xs: "flex-start",
-                        sm: "center",
+                        xs: 'flex-start',
+                        sm: 'center',
                       },
                       flexDirection: {
-                        xs: "column",
-                        sm: "row",
+                        xs: 'column',
+                        sm: 'row',
                       },
                     }}
                   >
                     <Text
                       styleSheet={{
                         textVariant: theme.typography.variants.body4,
-                        fontWeight: "600",
+                        fontWeight: '600',
                         borderRadius: theme.space.x64,
-                        color: theme.colors.primary["400"],
-                        backgroundColor: theme.colors.primary["100"],
+                        color: theme.colors.primary['400'],
+                        backgroundColor: theme.colors.primary['100'],
                         paddingHorizontal: theme.space['x2.5'],
                         paddingVertical: theme.space['x1'],
                         marginRight: theme.space.x2,
                         marginBottom: {
                           xs: theme.space.x2,
-                          sm: theme.space.x0
+                          sm: theme.space.x0,
                         },
                       }}
                     >
@@ -197,10 +201,10 @@ export default function HomeScreen() {
                     <Text
                       styleSheet={{
                         textVariant: theme.typography.variants.body4,
-                        fontWeight: "600",
+                        fontWeight: '600',
                         display: 'inline-flex',
                         borderRadius: theme.space.x64,
-                        color: theme.colors.primary["400"],
+                        color: theme.colors.primary['400'],
                         alignItems: 'center',
                       }}
                     >
@@ -210,7 +214,7 @@ export default function HomeScreen() {
                           iconVariant: 'chevronRight',
                           marginLeft: theme.space.xpx,
                         }}
-                        aria-hidden="true"
+                        aria-hidden='true'
                       />
                     </Text>
                   </Link>
@@ -222,29 +226,32 @@ export default function HomeScreen() {
                   }}
                 >
                   <Text
-                    as="h1"
+                    as='h1'
                     styleSheet={{
                       textVariant: theme.typography.variants.heading1,
-                      color: theme.colors.neutral["900"],
+                      color: theme.colors.neutral['900'],
                     }}
                   >
                     Alura Cases
                   </Text>
                   <Text
-                    as="p"
+                    as='p'
                     styleSheet={{
                       textVariant: theme.typography.variants.body1,
-                      color: theme.colors.neutral["500"],
+                      color: theme.colors.neutral['500'],
                       marginTop: theme.space.x6,
                     }}
                   >
-                    Aqui você vai ter acesso a discussões avançadas: as principais decisões sobre arquitetura e design de sistemas. Aprenda através das descobertas que as principais empresas de tecnologia enfrentam!
+                    Aqui você vai ter acesso a discussões avançadas: as
+                    principais decisões sobre arquitetura e design de sistemas.
+                    Aprenda através das descobertas que as principais empresas
+                    de tecnologia enfrentam!
                   </Text>
                   <Text
-                    as="p"
+                    as='p'
                     styleSheet={{
                       textVariant: theme.typography.variants.body1,
-                      color: theme.colors.neutral["500"],
+                      color: theme.colors.neutral['500'],
                       marginTop: theme.space.x6,
                     }}
                   >
@@ -252,8 +259,8 @@ export default function HomeScreen() {
                   </Text>
                 </Box>
                 <Box
-                  as="form"
-                  action="#"
+                  as='form'
+                  action='#'
                   styleSheet={{
                     display: {
                       sm: 'flex',
@@ -264,7 +271,7 @@ export default function HomeScreen() {
                     },
                     maxWidth: {
                       sm: theme.space.xcontainer_lg,
-                    }
+                    },
                   }}
                 >
                   <Box
@@ -274,8 +281,8 @@ export default function HomeScreen() {
                     }}
                   >
                     <Text
-                      as="label"
-                      htmlFor="email"
+                      as='label'
+                      htmlFor='email'
                       styleSheet={{
                         srOnly: true,
                       }}
@@ -283,12 +290,12 @@ export default function HomeScreen() {
                       Email address
                     </Text>
                     <Input
-                      id="email"
-                      type="email"
-                      placeholder="Coloque seu email aqui"
+                      id='email'
+                      type='email'
+                      placeholder='Coloque seu email aqui'
                     />
                   </Box>
-                  <Box 
+                  <Box
                     styleSheet={{
                       marginTop: {
                         xs: theme.space.x4,
@@ -300,7 +307,7 @@ export default function HomeScreen() {
                     }}
                   >
                     <Button
-                      type="submit"
+                      type='submit'
                       // button variant
                     >
                       Cadastrar
@@ -316,5 +323,5 @@ export default function HomeScreen() {
       </Box>
       <Footer />
     </Box>
-  )
+  );
 }
